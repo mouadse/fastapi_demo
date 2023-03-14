@@ -12,7 +12,6 @@ def get_weather(url: str):
     html = response.text
     beautiful_soup = BeautifulSoup(html, "html.parser")
     temperature = beautiful_soup.find("span", {"class": "temp__value temp__value_with-unit"}).text
-    weather_condition = beautiful_soup.find("span", {"class": "temp__value temp__value_with-unit"}).text
-
-
-    pass
+    weather_condition = beautiful_soup.find("div", {"class": "link__condition day-anchor i-bem"}).text
+    feels_like = beautiful_soup.find("span", {"class": "temp__value temp__value_with-unit"}).text
+    return {"temperature": temperature, "weather_condition": weather_condition, "feels_like": feels_like}
