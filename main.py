@@ -50,7 +50,5 @@ html
 and
 python
 code
-in
-the
-project
+in the project
 """
