@@ -1,3 +1,4 @@
+import re
 import requests
 from bs4 import BeautifulSoup
 from fastapi import FastAPI, Request
@@ -9,9 +10,20 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 
+def is_valid_meteum_link(link):
+    pattern = re.compile(r'^https?://(?:www\.)?meteum\.ai(?:/\S+)?$')
+    match = pattern.match(link)
+    if match:
+        return True
+    else:
+        return False
+
+
 @app.get("/weather", response_class=HTMLResponse)
 async def get_weather(request: Request, url: str):
-    # Your code to fetch weather information from the URL goes here
+    if not is_valid_meteum_link(url):
+        return "Invalid URL provided. Please provide a valid URL for https://meteum.ai/."
+
     response = requests.get(url)
     html = response.text
     beautiful_soup = BeautifulSoup(html, "html.parser")
