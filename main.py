@@ -35,6 +35,7 @@ async def get_weather(request: Request, url: str):
                "feels_like": feels_like}
     return templates.TemplateResponse("weather.html", context=context)
 
+
 """
 This
 is
@@ -43,10 +44,6 @@ multi-line
 comment
 to
 balance
-the
-amount
-of  
-html
-and
+the amount of html and
 python code in the project
 """
