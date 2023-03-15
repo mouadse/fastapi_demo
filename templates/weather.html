@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Information Code</title>
+    <title>Current Weather</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 24px;
             line-height: 1.5;
+            background-color: #282c34;
+            color: #fff;
+            padding: 20px;
         }
 
         h1 {
             margin-top: 0;
+            text-align: center;
         }
 
         dl {
@@ -21,16 +25,22 @@
             justify-content: space-between;
             margin: 0;
             padding: 0;
+            font-size: 32px;
+            margin-bottom: 50px;
         }
 
         dt {
             font-weight: bold;
-            width: 100px;
+            width: 250px;
+            text-align: right;
+            margin-right: 50px;
         }
 
         dd {
+            color: #2ea44f; /* GitHub green color */
             margin: 0;
-            width: calc(100% - 100px);
+            font-weight: normal;
+            font-size: 36px;
         }
     </style>
 </head>
@@ -38,11 +48,11 @@
 <h1>Current Weather</h1>
 <dl>
     <dt>Temperature:</dt>
-    <dd>{{ temperature }}</dd>
-    <dt>Weather Condition:</dt>
-    <dd>{{ weather_condition }}</dd>
+    <dd style="color: #2ea44f">{{ temperature }}</dd>
+    <dt>Condition:</dt>
+    <dd style="color: #2ea44f">{{ weather_condition }}</dd>
     <dt>Feels Like:</dt>
-    <dd>{{ feels_like }}</dd>
+    <dd style="color: #2ea44f">{{ feels_like }}</dd>
 </dl>
 </body>
 </html>
