@@ -48,7 +48,5 @@ amount
 of  
 html
 and
-python
-code
-in the project
+python code in the project
 """
