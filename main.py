@@ -34,3 +34,23 @@ async def get_weather(request: Request, url: str):
     context = {"request": request, "temperature": temperature, "weather_condition": weather_condition,
                "feels_like": feels_like}
     return templates.TemplateResponse("weather.html", context=context)
+
+"""
+This
+is
+a
+multi-line
+comment
+to
+balance
+the
+amount
+of  
+html
+and
+python
+code
+in
+the
+project
+"""
